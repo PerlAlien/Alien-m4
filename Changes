@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.03      2014-11-19 15:52:46 -0500
   - fix for source code build version detection
 
 0.02      2014-11-19 14:40:09 -0500
