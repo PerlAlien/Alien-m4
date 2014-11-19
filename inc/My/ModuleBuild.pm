@@ -38,7 +38,7 @@ sub alien_check_installed_version
   my $stderr = capture_stderr {
     @stdout = `m4 --version`;
   };
-  if($stdout[0] =~ /^m4/ && $stdout[0] =~ /([0-9\.]+)$/)
+  if(defined $stdout[0] && $stdout[0] =~ /^m4/ && $stdout[0] =~ /([0-9\.]+)$/)
   {
     return $1;
   }
