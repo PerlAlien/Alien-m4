@@ -50,7 +50,7 @@ sub alien_check_installed_version
 
 sub alien_check_built_version
 {
-  $CWD[-1] =~ /^bison-(.*)$/ ? $1 : 'unknown';
+  $CWD[-1] =~ /^m4-(.*)$/ ? $1 : 'unknown';
 }
 
 1;
