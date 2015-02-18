@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Do not accept existing versions of m4 that AutoConf will turn its nose to
 
 0.03      2014-11-19 15:52:46 -0500
   - fix for source code build version detection
