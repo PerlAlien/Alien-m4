@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.04      2015-02-18 17:17:10 -0500
   - Do not accept existing versions of m4 that AutoConf will turn its nose to
 
 0.03      2014-11-19 15:52:46 -0500
