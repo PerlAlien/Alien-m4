@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - use alien_stage_install
 
 0.05      2015-02-18 17:22:14 -0500
   - Require Alien::Base 0.010
