@@ -1,4 +1,4 @@
-# Alien::m4
+# Alien::m4 [![Build Status](https://secure.travis-ci.org/plicease/Alien-m4.png)](http://travis-ci.org/plicease/Alien-m4) [![Build status](https://ci.appveyor.com/api/projects/status/9jynihn7ute6pf8m/branch/master?svg=true)](https://ci.appveyor.com/project/plicease/Alien-m4/branch/master)
 
 Find or build m4
 
@@ -26,7 +26,7 @@ This package can be used by other CPAN modules that require m4.
 
 # AUTHOR
 
-Graham Ollis <plicease@cpan.org>
+Graham Ollis &lt;plicease@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
