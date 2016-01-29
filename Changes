@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use Alien::Base::ModuleBuild as configure_requires
+    instead of Alien::Base
 
 0.06      2015-04-22 11:26:16 -0400
   - use alien_stage_install
