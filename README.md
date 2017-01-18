@@ -15,7 +15,9 @@ From Alien::Base Build.PL
     use Alien:Base::ModuleBuild;
     my $builder = Module::Build->new(
       ...
-      alien_bin_requires => [ 'Alien::m4' ],
+      alien_bin_requires => {
+        'Alien::m4' => '0.07',
+      },
       ...
     );
     $builder->create_build_script;
