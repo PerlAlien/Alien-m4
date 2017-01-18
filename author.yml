@@ -9,7 +9,8 @@ pod_coverage:
   skip: 0
   # format is "Class#method" or "Class", regex allowed
   # for either Class or method.
-  private: []
+  private:
+    - #alien_helper
 
 unused_vars:
   skip: 0

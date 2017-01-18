@@ -29,6 +29,21 @@ From Alien::Base Build.PL
 
 This package can be used by other CPAN modules that require m4.
 
+=head1 HELPERS
+
+=head2 m4
+
+ %{m4}
+
+Returns the name of the m4 command.  Usually just C<m4>.
+
 =cut
+
+sub alien_helper
+{
+  return {
+    m4 => sub { 'm4' },
+  };
+}
 
 1;

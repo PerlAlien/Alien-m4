@@ -24,6 +24,14 @@ From Alien::Base Build.PL
 
 This package can be used by other CPAN modules that require m4.
 
+# HELPERS
+
+## m4
+
+    %{m4}
+
+Returns the name of the m4 command.  Usually just `m4`.
+
 # AUTHOR
 
 Graham Ollis <plicease@cpan.org>
