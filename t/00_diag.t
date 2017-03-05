@@ -11,10 +11,11 @@ my $post_diag;
 
 $modules{$_} = $_ for qw(
   Alien::Base
-  Alien::Base::ModuleBuild
-  Capture::Tiny
-  File::ShareDir
-  File::chdir
+  Alien::Build
+  Alien::Build::MM
+  ExtUtils::MakeMaker
+  Test2::Suite
+  Test::Alien
   Test::More
 );
 
