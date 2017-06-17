@@ -26,6 +26,15 @@ From Alien::Base Build.PL
 
 This package can be used by other CPAN modules that require m4.
 
+# METHODS
+
+## exe
+
+    my $m4 = Alien::m4->exe;
+
+Returns the "name" of m4.  Normally this is `m4`, but in some cases, it
+may be the full path to m4.
+
 # HELPERS
 
 ## m4

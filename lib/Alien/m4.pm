@@ -31,6 +31,15 @@ From Alien::Base Build.PL
 
 This package can be used by other CPAN modules that require m4.
 
+=head1 METHODS
+
+=head2 exe
+
+ my $m4 = Alien::m4->exe;
+
+Returns the "name" of m4.  Normally this is C<m4>, but in some cases, it
+may be the full path to m4.
+
 =head1 HELPERS
 
 =head2 m4
@@ -43,9 +52,16 @@ Returns the name of the m4 command.  Usually just C<m4>.
 
 sub alien_helper
 {
+  my($class) = @_;
   return {
-    m4 => sub { 'm4' },
+    m4 => sub { $class->exe },
   };
+}
+
+sub exe
+{
+  my($class) = @_;
+  $class->runtime_prop->{command} || 'm4';
 }
 
 1;
