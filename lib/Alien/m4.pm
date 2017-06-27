@@ -60,7 +60,8 @@ sub alien_helper
 
 sub exe
 {
-  'm4';
+  my($class) = @_;
+  $class->runtime_prop->{command} || 'm4';
 }
 
 1;
