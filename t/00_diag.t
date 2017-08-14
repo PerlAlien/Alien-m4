@@ -19,7 +19,13 @@ $modules{$_} = $_ for qw(
   Test::More
 );
 
-
+$post_diag = sub {
+  use Alien::m4;
+  diag "exe          = @{[ Alien::m4->exe               ]}";
+  diag "version      = @{[ Alien::m4->config('version') ]}";
+  diag "install_type = @{[ Alien::m4->install_type      ]}";
+  diag "msys?        = @{[ eval { require Alien::MSYS } ? 'installed' : 'unavailable' ]}";
+};
 
 my @modules = sort keys %modules;
 
