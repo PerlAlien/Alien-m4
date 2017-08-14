@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.16      2017-08-14 08:31:07 -0400
   - Workaround for old mingw/gcc
 
 0.15_01   2017-08-14 04:47:55 -0400
