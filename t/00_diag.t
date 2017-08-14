@@ -13,7 +13,9 @@ $modules{$_} = $_ for qw(
   Alien::Base
   Alien::Build
   Alien::Build::MM
+  Capture::Tiny
   ExtUtils::MakeMaker
+  Path::Tiny
   Test2::V0
   Test::Alien
   Test::More
