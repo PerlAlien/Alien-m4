@@ -14,8 +14,8 @@ probe sub {
   foreach my $command (qw( m4 gm4 gnum4 ), $ENV{M4})
   {
     my @stdout;
-    my($stdout) = capture { @stdout = `$command --version` };
-    if(defined $stdout[0] && $stdout[0] =~ /^m4/ && $stdout[0] =~ /([0-9\.]+)$/)
+    capture { @stdout = `$command --version` };
+    if(defined $stdout[0] && $stdout[0] =~ /^(GNU |)m4/i && $stdout[0] =~ /([0-9\.]+)$/)
     {
       my $version = $1;
       my @version = split /\./, $version;
@@ -25,7 +25,7 @@ probe sub {
       # GNU M4 1.4.6 or later is required; 1.4.16 or newer is recommended.
       # GNU M4 1.4.15 uses a buggy replacement strstr on some systems.
       # Glibc 2.9 - 2.12 and GNU M4 1.4.11 - 1.4.15 have another strstr bug.
-    
+
       return 'share' unless $version[0] >= 1;
     
       if($version[0] == 1)
