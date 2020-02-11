@@ -106,6 +106,13 @@ share {
       '%{patch} -p1 < %{.install.patch}/01-fix-ftbfs-with-glibc-2.28.patch',
     ];
   }
+  elsif($^O eq 'darwin')
+  {
+    patch [
+      # this is the patch that homebrew applies
+      '%{patch} -p0 < %{.install.patch}/secure_snprintf.patch',
+    ];
+  }
 
   gather sub {
     my($build) = @_;
