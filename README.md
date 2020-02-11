@@ -57,7 +57,7 @@ Why GNU m4?  Many Unixen come with BSD or other variants of m4 which are
 perfectly good.  Unfortunately, the main use case for this module is
 [Alien::Autotools](https://metacpan.org/pod/Alien::Autotools) and friends.  Autoconf requires the GNU m4, probably
 for political reasons, possibly for technical reasons.  If you are using
-one of these Unixen, don't dispair, you can usually install the GNU
+one of these Unixen, don't despair, you can usually install the GNU
 version of m4 either by building from source or by installing a binary
 package, with either the name `gm4` or `gnum4`, and this module will
 find it, and [Alien::Autotools](https://metacpan.org/pod/Alien::Autotools) will be able to use it.
