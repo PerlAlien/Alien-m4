@@ -1,7 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
-  - Use https for better security.
+  - Use https for better security (gh#5)
+  - Apply patch for recent glibc compatability on Linux (gh#3, gh#5)
 
 0.17      2017-08-30 11:08:35 -0400
   - Improved probe for system m4
