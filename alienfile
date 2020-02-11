@@ -19,7 +19,7 @@ probe sub {
     {
       my $version = $1;
       my @version = split /\./, $version;
-    
+
       # GNU M4 seems to have a history of brokenness
       # so says AutoConf:
       # GNU M4 1.4.6 or later is required; 1.4.16 or newer is recommended.
@@ -27,18 +27,18 @@ probe sub {
       # Glibc 2.9 - 2.12 and GNU M4 1.4.11 - 1.4.15 have another strstr bug.
 
       return 'share' unless $version[0] >= 1;
-    
+
       if($version[0] == 1)
       {
         return 'share' unless $version[1] >= 4;
-      
+
         if($version[1] == 4)
         {
           return 'share' unless $version[2] >= 6;
           return 'share' if $version[2] =~ /^(11|12|13|14|15)$/;
         }
       }
-    
+
       $build->install_prop->{my_version} = $version;
       $build->install_prop->{my_command} = $command;
 
@@ -63,7 +63,7 @@ probe sub {
       $build->install_prop->{my_patch_asprintf} = 1;
     }
   }
-  
+
   return 'share';
 };
 
@@ -73,9 +73,9 @@ share {
     url     => 'http://ftp.gnu.org/gnu/m4',
     version => qr/m4-([0-9\.]+)\.tar\.gz/,
   );
-  
+
   plugin 'Extract' => 'tar.gz';
-  
+
   plugin 'Build::Autoconf' => ();
 
   patch sub {
@@ -100,7 +100,7 @@ share {
     my($build) = @_;
     my @stdout;
     capture { @stdout = `m4 --version` };
-    $build->runtime_prop->{version} = 
+    $build->runtime_prop->{version} =
       defined $stdout[0] && $stdout[0] =~ /^m4/ && $stdout[0] =~ /([0-9\.]+)$/
         ? $1
         : 'unknown';
