@@ -70,7 +70,7 @@ probe sub {
 share {
 
   plugin 'Download' => (
-    url     => 'http://ftp.gnu.org/gnu/m4',
+    url     => 'https://ftp.gnu.org/gnu/m4',
     version => qr/m4-([0-9\.]+)\.tar\.gz/,
   );
 

@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Use https for better security.
 
 0.17      2017-08-30 11:08:35 -0400
   - Improved probe for system m4
