@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.18      2020-02-11 15:32:14 -0700
   - Use https for better security (gh#5)
   - Apply patch for recent glibc compatability on Linux (gh#3, gh#5)
 
