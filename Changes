@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Apply patch for macOS share install (gh#6, gh#7)
 
 0.18      2020-02-11 15:32:14 -0700
   - Use https for better security (gh#5)
