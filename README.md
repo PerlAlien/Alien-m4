@@ -1,4 +1,4 @@
-# Alien::m4 [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-m4.png)](http://travis-ci.org/Perl5-Alien/Alien-m4) [![Build status](https://ci.appveyor.com/api/projects/status/9jynihn7ute6pf8m/branch/master?svg=true)](https://ci.appveyor.com/project/Perl5-Alien/Alien-m4/branch/master)
+# Alien::m4 [![Build Status](https://secure.travis-ci.org/Perl5-Alien/Alien-m4.png)](http://travis-ci.org/Perl5-Alien/Alien-m4) [![Build status](https://ci.appveyor.com/api/projects/status/9jynihn7ute6pf8m/branch/master?svg=true)](https://ci.appveyor.com/project/plicease/Alien-m4/branch/master)
 
 Find or build GNU m4
 
@@ -6,21 +6,25 @@ Find or build GNU m4
 
 From a Perl script
 
-    use Alien::m4;
-    use Env qw( @PATH );
-    unshift @PATH, Alien::m4->bin_dir;  # m4 is now in your path
+```perl
+use Alien::m4;
+use Env qw( @PATH );
+unshift @PATH, Alien::m4->bin_dir;  # m4 is now in your path
+```
 
 From Alien::Base Build.PL
 
-    use Alien:Base::ModuleBuild;
-    my $builder = Module::Build->new(
-      ...
-      alien_bin_requires => {
-        'Alien::m4' => '0.07',
-      },
-      ...
-    );
-    $builder->create_build_script;
+```perl
+use Alien:Base::ModuleBuild;
+my $builder = Module::Build->new(
+  ...
+  alien_bin_requires => {
+    'Alien::m4' => '0.07',
+  },
+  ...
+);
+$builder->create_build_script;
+```
 
 # DESCRIPTION
 
@@ -30,7 +34,9 @@ This package can be used by other CPAN modules that require GNU m4.
 
 ## exe
 
-    my $m4 = Alien::m4->exe;
+```perl
+my $m4 = Alien::m4->exe;
+```
 
 Returns the "name" of m4.  Normally this is `m4`, but on some platforms
 it may be gm4 or gnum4, or whatever is specified by `$ENV{M4}`.
@@ -39,7 +45,9 @@ it may be gm4 or gnum4, or whatever is specified by `$ENV{M4}`.
 
 ## m4
 
-    %{m4}
+```
+%{m4}
+```
 
 Returns the name of the m4 command.  Usually just `m4`.
 
