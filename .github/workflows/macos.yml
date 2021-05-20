@@ -1,4 +1,4 @@
-name: macos-share
+name: macos
 
 on:
   push:
@@ -13,19 +13,28 @@ env:
   PERL_LOCAL_LIB_ROOT: /Users/runner/perl5
   PERL_MB_OPT: --install_base /Users/runner/perl5
   PERL_MM_OPT: INSTALL_BASE=/Users/runner/perl5
-  ALIEN_INSTALL_TYPE: share
 
 jobs:
   perl:
 
     runs-on: macOS-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        alien:
+          - install_type: share
+          - install_type: system
+
+    env:
+      ALIEN_INSTALL_TYPE: ${{ matrix.alien.install_type }}
+
     steps:
       - uses: actions/checkout@v2
 
       - name: Set up Perl
         run: |
-          brew install perl
+          brew install perl ${{ matrix.alien.packages }}
           curl https://cpanmin.us | perl - App::cpanminus -n
           echo "/Users/runner/perl5/bin" >> $GITHUB_PATH
 
@@ -41,16 +50,23 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ~/perl5
-          key: ${{ runner.os }}-build-share-${{ hashFiles('perlversion.txt') }}
+          key: ${{ runner.os }}-build-${{ matrix.alien.install_type }}-${{ hashFiles('perlversion.txt') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ hashFiles('perlversion.txt') }}
+            ${{ runner.os }}-build-${{ matrix.alien.install_type }}-${{ hashFiles('perlversion.txt') }}
 
       - name: Install Static Dependencies
         run: |
           cpanm -n Dist::Zilla
           dzil authordeps --missing | cpanm -n
           dzil listdeps --missing   | cpanm -n
+
       - name: Install Dynamic Dependencies
         run: dzil run --no-build 'cpanm --installdeps .'
+
       - name: Run Tests
         run: dzil test -v
+
+      - name: CPAN log
+        if: ${{ failure() }}
+        run: |
+          cat ~/.cpanm/latest-build/build.log
