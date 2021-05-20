@@ -1,4 +1,4 @@
-# Alien::m4 ![linux](https://github.com/PerlAlien/Alien-m4/workflows/linux/badge.svg) ![macos](https://github.com/PerlAlien/Alien-m4/workflows/macos/badge.svg) ![windows](https://github.com/PerlAlien/Alien-m4/workflows/windows/badge.svg)
+# Alien::m4 ![linux](https://github.com/PerlAlien/Alien-m4/workflows/linux/badge.svg) ![macos](https://github.com/PerlAlien/Alien-m4/workflows/macos/badge.svg) ![windows](https://github.com/PerlAlien/Alien-m4/workflows/windows/badge.svg) ![cygwin](https://github.com/PerlAlien/Alien-m4/workflows/cygwin/badge.svg) ![msys2-mingw](https://github.com/PerlAlien/Alien-m4/workflows/msys2-mingw/badge.svg)
 
 Find or build GNU m4
 
