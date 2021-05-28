@@ -80,7 +80,7 @@ share {
 
   if($^O eq 'MSWin32')
   {
-
+    plugin 'Prefer::BadVersion' => '1.4.19';
     patch sub {
       my($build) = @_;
 
@@ -108,6 +108,7 @@ share {
   }
   elsif($^O eq 'darwin')
   {
+    plugin 'Prefer::BadVersion' => '1.4.19';
     patch [
       # this is the patch that homebrew applies
       '%{patch} -p0 < %{.install.patch}/secure_snprintf.patch',
