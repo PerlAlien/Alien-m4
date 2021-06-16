@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         alien:
-#          - install_type: share
+          - install_type: share
           - install_type: system
             packages: m4
 
