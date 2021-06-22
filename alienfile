@@ -18,7 +18,6 @@ probe sub {
     if(defined $stdout[0] && $stdout[0] =~ /^(GNU |)m4/i && $stdout[0] =~ /([0-9]+\.[0-9]+\.[0-9]+)/)
     {
       my $version = $1;
-      $version =~ s/\.+$//;
       my @version = split /\./, $version;
 
       # GNU M4 seems to have a history of brokenness
