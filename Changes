@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Handle version numbers with funny characters (gh#18, gh#19)
 
 0.20      2021-05-28 18:28:27 -0600
   - Remove patch for linux that is no longer needed
